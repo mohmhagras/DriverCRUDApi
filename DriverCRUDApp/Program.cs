@@ -1,8 +1,12 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿using DriverCRUDApp.Services;
+
+
+var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddSingleton<DriverService>();
 
 var app = builder.Build();
 
