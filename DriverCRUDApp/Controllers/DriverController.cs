@@ -61,9 +61,9 @@ public class DriverController : Controller
             return StatusCode(500, $"Internal Server Error\n{e}");
         }
     }
-    
-    [HttpDelete]
-    public async Task<IActionResult> DeleteDriver([FromBody] string id)
+
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteDriver(string id)
     {
         try
         {
